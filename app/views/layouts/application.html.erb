@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BlogProject</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+  </head>
+
+  <body>
+    <nav class="navbar-fixed-top navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapse_button" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+            <!-- The original line for 👇 was: <a class="navbar-brand" href="#"> <img id="logo" src="pics/black_logo.png"></a> -->
+          <!-- <a class="navbar-brand" href="#"> -->
+          <%= link_to image_tag('black_logo.png', id: "logo"), home_path, class: 'navbar-brand' %>
+          <!-- </a> -->
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+           <ul class="nav navbar-nav">
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+            <li> <%= link_to 'New Post', new_post_path %></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><form class="form-inline">
+              <input id="search_placeholder" class="form-control mr-sm-2" type="text" placeholder="&#xF002; Search" style="font-family:Arial, FontAwesome">
+            </form></li>
+            <li><a href="#"> Sign Up</a></li>
+            <li><a href="#"> Login</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <br><br><br><br>
+
+    <!-- <%= link_to('New Post', new_post_path) %> -->
+
+
+    <%= yield %>
+
+
+    <div class="container-fluid footer">
+    <a class="more_articles col-sx-12">More Articles</a>
+    <br>
+    <div class="social_media">
+      <i class="fa fa-envelope-o fa-4x" aria-hidden="true"></i>
+      <i class="fa fa-facebook fa-4x" aria-hidden="true"></i>
+      <i class="fa fa-instagram fa-4x" aria-hidden="true"></i>
+      <i class="fa fa-medium fa-4x" aria-hidden="true"></i>
+      <i class="fa fa-twitter fa-4x" aria-hidden="true"></i>
+    </div>
+  </div>
+
+  </body>
+</html>
