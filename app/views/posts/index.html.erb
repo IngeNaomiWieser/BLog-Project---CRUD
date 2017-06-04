@@ -1,5 +1,33 @@
 <div class="container-fluid">
-  <h1> All posts </h1>
+  <div class="post col-xs-12 col-sm-8">
+    <div class="post_image">
+      <%= image_tag 'golf.jpg' %>
+    </div>
+    <div class="icons_under_image">
+      <i class="fa fa-heart-o fa-2x" aria-hidden="true"></i>
+      <h4 class="count">456</h4>
+      <i class="fa fa-bookmark-o fa-2x pull-right" aria-hidden="true"></i>
+    </div>
+    <div class="post_text">
+      <h2>Post Title</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <a>Post Author Name</a>
+      <p>Post Date</p>
+    </div>
+  </div>
+
+  <div class="most_liked hidden-xs col-sm-4">
+    <h2>Most Liked</h2>
+    <a href="#">The Worst Advice Ever</a>
+    <a href="#">10 Things I Hate About You</a>
+    <a href="#">Why You Should Not Eat Meat</a>
+    <a href="#">I Want To Go Outside</a>
+    <a href="#">Listen To Some Nice Music</a>
+    <a href="#">5 Ways To Wear Wonder Women Boots</a>
+    <a href="#">Why Am I Always Hungry?</a>
+      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  </div>
+
   <% @posts.each do |post| %>
     <div class="post col-xs-12 col-sm-4">
       <!-- <div class="post_image">
