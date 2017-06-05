@@ -28,13 +28,20 @@
             <li><a href="#">About</a></li>
             <li><a href="#">Contact</a></li>
             <li> <%= link_to 'New Post', new_post_path %></li>
+            <% if user_signed_in? %>
+              <li id="hello"> Hello <%= link_to current_user.first_name, edit_user_path(current_user)  %> ! </li>
+              <li> <%= link_to 'Log out', sessions_path %></li>
+            <% end %>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li><form class="form-inline">
               <input id="search_placeholder" class="form-control mr-sm-2" type="text" placeholder="&#xF002; Search" style="font-family:Arial, FontAwesome">
             </form></li>
-            <li><a href="#"> Sign Up</a></li>
-            <li><a href="#"> Login</a></li>
+            <% if !user_signed_in? %>
+              <li> <%= link_to 'Log in', new_session_path %> </li>
+                |
+              <li> <%= link_to 'Sign Up', new_user_path %> </li>
+            <% end %>
           </ul>
         </div>
       </div>
@@ -44,6 +51,11 @@
 
     <!-- <%= link_to('New Post', new_post_path) %> -->
 
+    <% if flash[:notice] %>
+       <div class='alert alert-success'><%= flash[:notice] %></div>
+     <% elsif flash[:alert] %>
+       <div class='alert alert-danger'><%= flash[:alert] %></div>
+    <% end %>
 
     <%= yield %>
 

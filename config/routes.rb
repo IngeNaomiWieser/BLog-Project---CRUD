@@ -3,12 +3,18 @@ Rails.application.routes.draw do
 
   get '/', to: 'posts#index', as: 'home'
   get '/new', to: 'posts#new', as: 'new_post'
-  post '/', to: 'posts#create', as: 'posts'
-  get '/:id', to: 'posts#show', as: 'post'
-  delete '/:id', to: 'posts#destroy'
+  # post '/', to: 'posts#create', as: 'posts'
+  # get '/:id', to: 'posts#show', as: 'post'
+  # delete '/:id', to: 'posts#destroy'
 
-  resources :post do
+  resources :users, only: [:new, :create, :edit, :update]
+
+  resources :posts do
     resources :comments, only: [:create, :destroy]
+  end
+
+  resources :sessions, only: [:new, :create] do
+    get :destroy, on: :collection
   end
 
 end

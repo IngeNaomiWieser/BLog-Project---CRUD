@@ -25,9 +25,10 @@
     <a href="#">Listen To Some Nice Music</a>
     <a href="#">5 Ways To Wear Wonder Women Boots</a>
     <a href="#">Why Am I Always Hungry?</a>
-      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
   </div>
+</div>
 
+<div class="container-fluid">
   <% @posts.each do |post| %>
     <div class="post col-xs-12 col-sm-4">
       <!-- <div class="post_image">
@@ -39,7 +40,7 @@
         <i class="fa fa-bookmark-o fa-2x pull-right" aria-hidden="true"></i>
       </div> -->
       <div class="post_text">
-        <h2><%= link_to post.title, post_path(post) %></h2>
+        <h2 class="title"> <%= link_to post.title, post_path(post) %></h2>
         <p> <%=post.body%></p>
         <a>Post Author Name</a>
         <p>Post Date</p>

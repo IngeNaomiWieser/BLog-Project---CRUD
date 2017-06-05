@@ -22,6 +22,16 @@ body {
   margin-top: 30px;
 }*/
 
+#hello {
+  color: #9d9d9d;
+  margin-top: 15px;
+  display: flex;
+}
+
+#hello a {
+  padding: 0px 4px 0px 4px;
+}
+
 .form-inline {
   margin-top: 8px;
 }
@@ -141,4 +151,8 @@ body {
 .more_comments {
   font-size: 40px;
   text-decoration: underline;
+}
+
+.hide {
+  display: none; 
 }

@@ -1,0 +1,36 @@
+<div class="container well">
+  <h2>Edit your post here</h2>
+
+<% if @post.errors.any? %>
+  <u>
+    <% @post.errors.full_messages.each do |msg| %>
+      <li> <%= msg %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_for @post do |f| %>
+  <br>
+    <div class="form-group">
+      <%= f.label :title %>
+      <%= f.text_field :title, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= f.label :body %>
+      <%= f.text_area :body, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= f.label :category %>
+      <%= f.collection_select :category_id,
+        @categories,
+        :id,
+        :name,
+        include_blank: true,
+        prompt: 'Choose a category'
+        %>
+    </div>
+    <div>
+      <%= f.submit class: 'btn btn-primary' %>
+    </div>
+  </div>
+<% end %>
