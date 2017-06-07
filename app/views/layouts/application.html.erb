@@ -30,13 +30,15 @@
             <li> <%= link_to 'New Post', new_post_path %></li>
             <% if user_signed_in? %>
               <li id="hello"> Hello <%= link_to current_user.first_name, edit_user_path(current_user)  %> ! </li>
-              <li> <%= link_to 'Log out', sessions_path %></li>
             <% end %>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li><form class="form-inline">
               <input id="search_placeholder" class="form-control mr-sm-2" type="text" placeholder="&#xF002; Search" style="font-family:Arial, FontAwesome">
             </form></li>
+            <% if user_signed_in? %>
+              <li> <%= link_to 'Log out', sessions_path %></li>
+            <% end %>
             <% if !user_signed_in? %>
               <li> <%= link_to 'Log in', new_session_path %> </li>
                 |
@@ -46,6 +48,7 @@
         </div>
       </div>
     </nav>
+
 
     <br><br><br><br>
 
@@ -59,18 +62,6 @@
 
     <%= yield %>
 
-
-    <div class="container-fluid footer">
-    <a class="more_articles col-sx-12">More Articles</a>
-    <br>
-    <div class="social_media">
-      <i class="fa fa-envelope-o fa-4x" aria-hidden="true"></i>
-      <i class="fa fa-facebook fa-4x" aria-hidden="true"></i>
-      <i class="fa fa-instagram fa-4x" aria-hidden="true"></i>
-      <i class="fa fa-medium fa-4x" aria-hidden="true"></i>
-      <i class="fa fa-twitter fa-4x" aria-hidden="true"></i>
-    </div>
-  </div>
 
   </body>
 </html>

@@ -22,10 +22,10 @@ class PostsController < ApplicationController
     @post = Post.new post_params
     @post.user = current_user
     if @post.save
-      flash[:notice] = 'Product created'
+      flash[:notice] = 'Post created'
       redirect_to posts_path  # or: @post
     else
-      flash[:alert] = 'Problem creating your product'
+      flash[:alert] = 'Problem creating your post'
       render :new      # you're not giving it a path, but a template
     end
   end
@@ -42,7 +42,7 @@ class PostsController < ApplicationController
     post_params = params.require(:post).permit(:title, :body, :category_id)
     @post = Post.find params[:id]
     if cannot? :edit, @post
-      recirect_to @post, alert: 'Acces denied. You can not edit a product that is not yours.'
+      redirect_to @post, alert: 'Acces denied. You can not edit a post that is not yours.'
     elsif @post.update(post_params)
       redirect_to @post, notice: 'Successfully updated!'
     else

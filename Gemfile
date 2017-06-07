@@ -22,6 +22,8 @@ gem 'uglifier', '>= 1.3.0'
 
 gem 'faker', github: 'stympy/faker'
 gem 'font-awesome-rails'
+gem 'bootstrap-sass'
+gem 'bootstrap_form'
 gem 'jquery-rails'
 
 # Use CoffeeScript for .coffee assets and views

@@ -6,15 +6,19 @@
     <div class="icons_under_image">
       <i class="fa fa-heart-o fa-2x" aria-hidden="true"></i>
       <h4 class="count">456</h4>
-      <i class="fa fa-bookmark-o fa-2x pull-right" aria-hidden="true"></i>
+      <div class="pull-right">
+        <i class="fa fa-bookmark-o fa-2x" aria-hidden="true"></i>
+      </div>
     </div>
     <div class="post_text">
-      <h2>Post Title</h2>
+      <h2>Playing golf with a view like this ... </h2>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-      <a>Post Author Name</a>
-      <p>Post Date</p>
+      <a>Sarah Silverman</a>
+      <p>May 15th, 2016</p>
     </div>
   </div>
+
+
 
   <div class="most_liked hidden-xs col-sm-4">
     <h2>Most Liked</h2>
@@ -42,15 +46,25 @@
       <div class="post_text">
         <h2 class="title"> <%= link_to post.title, post_path(post) %></h2>
         <p> <%=post.body%></p>
-        <a>Post Author Name</a>
-        <p>Post Date</p>
+        <a>Author:   <%= post.user.first_name %></a>
+        <p>Date posted: <%= post.created_at.to_time.utc.strftime("%a, %d %b %Y %T") %></p>
       </div>
     </div>
   <% end %>
 </div>
 
 
-
+<div class="container-fluid footer">
+  <a class="more_articles col-sx-12">More Articles</a>
+  <br>
+  <div class="social_media">
+    <i class="fa fa-envelope-o fa-4x" aria-hidden="true"></i>
+    <i class="fa fa-facebook fa-4x" aria-hidden="true"></i>
+    <i class="fa fa-instagram fa-4x" aria-hidden="true"></i>
+    <i class="fa fa-medium fa-4x" aria-hidden="true"></i>
+    <i class="fa fa-twitter fa-4x" aria-hidden="true"></i>
+  </div>
+</div>
 
 
 

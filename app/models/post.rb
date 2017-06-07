@@ -1,6 +1,6 @@
 class Post < ApplicationRecord
   belongs_to :category, optional: true
-  belongs_to :user #evt optional true maar denk het niet 
+  belongs_to :user, optional: true 
   has_many :comments, dependent: :destroy
 
   validates :title, presence: true

@@ -1,0 +1,197 @@
+* {
+  border-radius: 5px;
+}
+
+body {
+  margin: 0px;
+}
+
+h2 {
+  font-family: Helvetica;
+}
+
+/*INDEX PAGE */
+
+
+
+.icon-bar {
+  background-color: white;
+}
+
+#logo {
+  width: 260px;
+  height: 63px;
+  margin-top: -21px;
+}
+
+/*#new_post_nav {
+  margin-top: 30px;
+}*/
+
+#hello {
+  color: #9d9d9d;
+  margin-top: 15px;
+  display: flex;
+  margin-left: 15px;
+}
+
+#hello a {
+  padding: 0px 4px 0px 4px;
+}
+
+.form-inline {
+  margin-top: 8px;
+}
+
+.post_image img {
+  width: 100%;
+  border: thin black solid;
+}
+
+.count{
+  display: inline-block;
+  margin-left: 5px;
+  margin-bottom: 0px;
+}
+
+.post_text a {
+  text-decoration: underline;
+}
+
+/*To only show the first 3 lines of the paragraph: */
+.post_text p {
+    height: 60px;
+    line-height: 20px; /* Height / no. of lines to display */
+    overflow: hidden;
+}
+
+.most_liked a {
+  display: block;
+  text-decoration: underline;
+}
+
+.footer {
+  text-align: center;
+}
+
+.more_articles {
+  font-size: 40px;
+  text-decoration: underline;
+}
+
+.social_media i {
+  margin: 25px 30px 20px 25px;
+}
+
+/*VANAF HIER DE SHOW PAGE*/
+
+.icon-bar {
+  background-color: white;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.icons_under_image {
+  display: block;
+}
+
+.icons_under_image i {
+  margin: 8px;
+}
+
+.icons_under_image h4 {
+  margin-top: 8px;
+  margin-left: 0px;
+  padding-top: 5px;
+}
+
+// .fa-bookmark-o {
+//   padding: 0px;
+// }
+
+.big_pic {
+  padding: 0px;
+  border: thin black solid;
+  margin-bottom: 30px;
+}
+
+
+.post_category_and_date {
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+}
+
+.post_body_show {
+  font-size: 20px;
+}
+
+
+.author {
+  margin-top: 20px;
+  padding: 0px
+}
+
+.author img {
+  width: 140px;
+  height: 140px;
+  margin-right: 20px;
+  float: left;
+  border: thin solid black;
+}
+
+.author h3 {
+  margin: 0px 0px 10px 0px;
+}
+
+.author_name_label {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.comment img {
+  width: 85px;
+  height: 85px;
+  float: left;
+  border: thin solid black;
+  margin-right: 15px;
+}
+
+.comment_name_date {
+  display: flex;
+  justify-content: space-between;
+  clear: both;
+}
+
+.more_comments {
+  font-size: 40px;
+  text-decoration: underline;
+}
+
+.comments {
+  display: block;
+  font-size: 20px;
+}
+
+.author_comment {
+  text-decoration: underline;
+  color: #23527c;
+  font-size: 16px;
+}
+
+.author_date {
+  color: #23527c;
+  font-size: 16px;
+}
+
+.comment_delete {
+  margin-top: -10px;
+}
+
+
+/*.hide {
+  display: none;
+}*/

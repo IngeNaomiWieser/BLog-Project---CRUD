@@ -3,9 +3,10 @@ class CommentsController < ApplicationController
   before_action :authenticate_user!
 
   def create
-    @comment = Comment.new(comment_params)
     @post = Post.find(params[:post_id])
+    @comment = Comment.new(comment_params)
     @comment.post = @post
+    @comment.user = current_user
     if @comment.save
       flash[:notice] = 'Comment created'
       redirect_to @post      #redirect to @post, so the same as saying: post_path(@post)

@@ -1,21 +1,24 @@
 <div class="container">
-  <h1><%= @post.title  %></h1>
-  <p><%= @post.body %></p>
-  <p><%= @post.created_at  %></p>
-
-  <p><strong>Category:</strong> <%= @post.category&.name %></p>
+  <h2><%= @post.title  %></h2>
+  <p class="post_body_show"><%= @post.body %></p>
+  <div class="post_category_and_date">
+    <p>Created at: <%= @post.created_at.to_time.utc.strftime("%a, %d %b %Y %T")   %></p>
+    <p>Category: <%= @post.category&.name %></p>
+  </div>
 
   <% if can? :edit, @post %>
-    <%= link_to 'Edit', edit_post_path(@post) %>
+    <%= link_to 'Edit', edit_post_path(@post), class: "btn btn-info" %>
   <% end %>
 
   <% if can? :destroy, @post %>
     <%= link_to 'Delete', post_path(@post),
                         method: :delete,
-                        data: { confirm: 'Are you sure?' } %>
+                        data: { confirm: 'Are you sure?' }, class: "btn btn-danger"  %>
   <% end  %>
 
-  <h1>Comments<h2>
+  <br><br><br><br> <br><br>
+
+  <h2>Comments<h2>
 
   <% if @comment.errors.any? %>
     <%= @comment.errors.full_messages.join(', ') %>
@@ -28,21 +31,35 @@
         <%= f.text_area :body, class: 'comment_form col-xs-12', rows: '5' %>
       </div>
       <div class="form-group row">
-        <%= f.submit :submit, class: "btn btn-primary"%>
+        <%= f.submit :submit, class: "btn btn-success"%>
       </div>
     </div>
   <% end %>
 
   <% @post.comments.each do |comment| %>
-    <div>
+    <div class = "comments">
       <p><%= comment.body %></p>
+      <p class="author_comment"> Author:   <%= comment.user.first_name %></p>
+      <p class="author_date"> Created at:  <%= comment.created_at.to_time.utc.strftime("%a, %d %b %Y %T") %>
       <%= link_to 'Delete comment',
               [@post, comment],
               method: :delete,
-              data: { confirm: 'Are you sure?'}
+              data: { confirm: 'Are you sure?'}, class: "btn btn-danger pull-right comment_delete"
       %>
-      <hr />
+      <hr/>
     </div>
   <% end %>
 
+</div>
+
+<div class="container-fluid footer">
+  <a class="more_articles col-sx-12">More Comments</a>
+  <br>
+  <div class="social_media">
+    <i class="fa fa-envelope-o fa-4x" aria-hidden="true"></i>
+    <i class="fa fa-facebook fa-4x" aria-hidden="true"></i>
+    <i class="fa fa-instagram fa-4x" aria-hidden="true"></i>
+    <i class="fa fa-medium fa-4x" aria-hidden="true"></i>
+    <i class="fa fa-twitter fa-4x" aria-hidden="true"></i>
+  </div>
 </div>
